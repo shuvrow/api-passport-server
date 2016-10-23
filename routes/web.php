@@ -12,5 +12,13 @@
 */
 
 Route::get('/', function () {
+    //Event::fire(new \App\Events\HelloEvent());
     return view('welcome');
 });
+
+Route::get('user/{user}',function(\App\User $user){ return $user;
+});
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
+
